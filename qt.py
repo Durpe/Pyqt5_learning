@@ -15,5 +15,4 @@ class Stats:
 app = QApplication([])
 window = Stats()
 window.ui.show()
-print('ss')
 app.exec_()
