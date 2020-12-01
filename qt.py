@@ -11,8 +11,14 @@ class Stats:
         qfile.close()
 
         self.ui = QUiLoader().load(qfile)
-
+        self.ui.pushButton.clicked.connect(self.greetings)
+    def greetings(self):
+        self.ui.plainTextEdit_2.insertPlainText(self.ui.lineEdit.text())
+        #self.ui.plainTextEdit_2.
 app = QApplication([])
 window = Stats()
 window.ui.show()
 app.exec_()
+
+if __name__ == '__main__':
+    window = Stats()
