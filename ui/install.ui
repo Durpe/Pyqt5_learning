@@ -29,7 +29,7 @@
    <string>请选择软件安装目录</string>
   </property>
   <widget class="QWidget" name="widget">
-   <widget class="QLabel" name="label">
+   <widget class="QLabel" name="title_info">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -77,7 +77,7 @@
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,5,1">
        <item>
-        <widget class="QCheckBox" name="checkBox">
+        <widget class="QCheckBox" name="zw_check">
          <property name="minimumSize">
           <size>
            <width>50</width>
@@ -90,10 +90,10 @@
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit"/>
+        <widget class="QLineEdit" name="ZW_txtbox"/>
        </item>
        <item>
-        <widget class="QPushButton" name="pushButton">
+        <widget class="QPushButton" name="zw_selectfile">
          <property name="text">
           <string>选择路径</string>
          </property>
@@ -104,7 +104,7 @@
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="1,5,1">
        <item>
-        <widget class="QCheckBox" name="checkBox_2">
+        <widget class="QCheckBox" name="creo_check">
          <property name="minimumSize">
           <size>
            <width>50</width>
@@ -117,10 +117,10 @@
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit_2"/>
+        <widget class="QLineEdit" name="creo_txtbox"/>
        </item>
        <item>
-        <widget class="QPushButton" name="pushButton_2">
+        <widget class="QPushButton" name="creo_selectfile">
          <property name="text">
           <string>选择路径</string>
          </property>
@@ -186,14 +186,14 @@
       </spacer>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton_3">
+      <widget class="QPushButton" name="confirm">
        <property name="text">
         <string>确认</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton_4">
+      <widget class="QPushButton" name="cancel">
        <property name="text">
         <string>取消</string>
        </property>
