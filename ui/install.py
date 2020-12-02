@@ -9,9 +9,10 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import QFileDialog,QMainWindow
 
 
-class Ui_MainWindow(object):
+class Ui_MainWindow(QMainWindow):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.setEnabled(True)
@@ -52,6 +53,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout.addWidget(self.ZW_txtbox)
         self.zw_selectfile = QtWidgets.QPushButton(self.layoutWidget1)
         self.zw_selectfile.setObjectName("zw_selectfile")
+        self.zw_selectfile.clicked.connect(self.openfileselctor_zw)
         self.horizontalLayout.addWidget(self.zw_selectfile)
         self.horizontalLayout.setStretch(0, 1)
         self.horizontalLayout.setStretch(1, 5)
@@ -68,6 +70,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_2.addWidget(self.creo_txtbox)
         self.creo_selectfile = QtWidgets.QPushButton(self.layoutWidget1)
         self.creo_selectfile.setObjectName("creo_selectfile")
+        self.creo_selectfile.clicked.connect(self.openfileselctor_creo)
         self.horizontalLayout_2.addWidget(self.creo_selectfile)
         self.horizontalLayout_2.setStretch(0, 1)
         self.horizontalLayout_2.setStretch(1, 5)
@@ -122,4 +125,14 @@ class Ui_MainWindow(object):
         self.confirm.setText(_translate("MainWindow", "确认"))
         self.cancel.setText(_translate("MainWindow", "取消"))
 
+    def openfileselctor_zw(self):
+        directory = QFileDialog.getExistingDirectory(self,
+                                                      "选取文件夹",
+                                                      "./")  # 起始路径
+        self.ZW_txtbox.insert(directory)
 
+    def openfileselctor_creo(self):
+        directory = QFileDialog.getExistingDirectory(self,
+                                                      "选取文件夹",
+                                                      "./")  # 起始路径
+        self.creo_txtbox.insert(directory)
