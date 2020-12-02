@@ -126,13 +126,13 @@ class Ui_MainWindow(QMainWindow):
         self.cancel.setText(_translate("MainWindow", "取消"))
 
     def openfileselctor_zw(self):
-        directory = QFileDialog.getExistingDirectory(self,
+        self.zw_dir = QFileDialog.getExistingDirectory(self,
                                                       "选取文件夹",
                                                       "./")  # 起始路径
-        self.ZW_txtbox.insert(directory)
+        self.ZW_txtbox.insert(self.zw_dir)
 
     def openfileselctor_creo(self):
-        directory = QFileDialog.getExistingDirectory(self,
+        self.creo_dir = QFileDialog.getExistingDirectory(self,
                                                       "选取文件夹",
                                                       "./")  # 起始路径
-        self.creo_txtbox.insert(directory)
+        self.creo_txtbox.insert(self.creo_dir)
