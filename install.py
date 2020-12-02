@@ -7,7 +7,7 @@ class Stats:
 
     def __init__(self):
         # 调用ui文件
-        qfile = QFile('ui/stats.ui')
+        qfile = QFile('ui/install.ui')
         qfile.open(QFile.ReadOnly)
         qfile.close()
 
