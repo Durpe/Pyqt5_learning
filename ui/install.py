@@ -148,15 +148,10 @@ class Ui_MainWindow(QMainWindow):
 
     windowList = []
     def confirm_B(self):
-        # 进入下一个页面
-        #app = QApplication(sys.argv)
-        second = QMainWindow()
         the_window = Ui_Form()
-        the_window.setupUi(second)
         self.windowList.append(the_window)  ##注：没有这句，是不打开另一个主界面的！
         self.close()
-        second.show()
-        #sys.exit(app.exec_())
+        the_window.show()
 
 
 
