@@ -27,6 +27,7 @@ class Form(QDialog):
 if __name__ == '__main__':
     app = QApplication([])
 
-    form= Form()
+    form = Form()
     form.show()
+
     sys.exit(app.exec_())
