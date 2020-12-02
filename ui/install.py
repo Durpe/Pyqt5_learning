@@ -27,11 +27,6 @@ class Ui_MainWindow(QMainWindow):
         self.setMaximumSize(QtCore.QSize(500, 350))
         self.setupUi()
     def setupUi(self):
-        # MainWindow.setObjectName("MainWindow")
-        # MainWindow.setEnabled(True)
-        # MainWindow.resize(500, 350)
-        # MainWindow.setMinimumSize(QtCore.QSize(500, 350))
-        # MainWindow.setMaximumSize(QtCore.QSize(500, 350))
         self.widget = QtWidgets.QWidget(self)
         self.widget.setObjectName("widget")
         self.title_info = QtWidgets.QLabel(self.widget)

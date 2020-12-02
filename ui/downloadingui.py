@@ -9,35 +9,35 @@
 import sys
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import QMainWindow, QDialog, QApplication
+from PyQt5.QtWidgets import QApplication, QMainWindow
 
-
-
-
-class Ui_Form(object):
-    def setupUi(self, Form):
-        Form.setObjectName("Form")
-        Form.resize(400, 300)
-        self.verticalLayout_2 = QtWidgets.QVBoxLayout(Form)
+class Ui_Form(QMainWindow):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.setObjectName("Form")
+        self.resize(400, 300)
+        self.setupUi()
+    def setupUi(self):
+        self.verticalLayout_2 = QtWidgets.QVBoxLayout(self)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
         self.verticalLayout = QtWidgets.QVBoxLayout()
         self.verticalLayout.setObjectName("verticalLayout")
-        self.title_info = QtWidgets.QLabel(Form)
+        self.title_info = QtWidgets.QLabel(self)
         self.title_info.setObjectName("title_info")
         self.verticalLayout.addWidget(self.title_info)
-        self.progressBar = QtWidgets.QProgressBar(Form)
+        self.progressBar = QtWidgets.QProgressBar(self)
         self.progressBar.setProperty("value", 24)
         self.progressBar.setObjectName("progressBar")
         self.verticalLayout.addWidget(self.progressBar)
-        self.install_info = QtWidgets.QPlainTextEdit(Form)
+        self.install_info = QtWidgets.QPlainTextEdit(self)
         self.install_info.setObjectName("install_info")
         self.verticalLayout.addWidget(self.install_info)
         self.verticalLayout.setStretch(1, 1)
         self.verticalLayout.setStretch(2, 3)
         self.verticalLayout_2.addLayout(self.verticalLayout)
 
-        self.retranslateUi(Form)
-        QtCore.QMetaObject.connectSlotsByName(Form)
+        self.retranslateUi(self)
+        QtCore.QMetaObject.connectSlotsByName(self)
 
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
@@ -45,10 +45,7 @@ class Ui_Form(object):
         self.title_info.setText(_translate("Form", "正在安装，请稍后..."))
 
 if __name__ == '__main__':
-    app = QApplication(sys.argv)
-    MainWindow = QMainWindow()
-    ui = Ui_Form()
-    ui.setupUi(MainWindow)
-
-    MainWindow.show()
-    sys.exit(app.exec_())
+    app = QApplication([])
+    window = Ui_Form()
+    window.show()
+    sys.exit(app.exec())
